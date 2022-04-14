@@ -1,4 +1,4 @@
-import { RequireAuth } from 'react-firebase-hooks/auth';
+import RequireAuth from './components/RequireAuth/RequireAuth'
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import About from './components/About/About';
@@ -18,7 +18,7 @@ function App() {
         <Route path='/' element={<Shop></Shop>}></Route>
         <Route path='/shop' element={<Shop></Shop>}></Route>
         <Route path='/orders' element={<Orders></Orders>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory' element={<RequireAuth><Inventory></Inventory></RequireAuth>}></Route>
         <Route path='/about' element={<About></About>}></Route>
 
         <Route path='/shipment' element={
